@@ -1,5 +1,17 @@
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { Outlet } from "react-router-dom";
+
 const PublicLayout = () => {
-  return <h1>Public Layout</h1>;
+  return (
+    <>
+      <Navbar />
+
+      <Outlet />
+
+      <Footer />
+    </>
+  );
 };
 
 export default PublicLayout;
