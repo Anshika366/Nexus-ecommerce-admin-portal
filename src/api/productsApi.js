@@ -51,3 +51,20 @@ export const fetchProductById = async (id) => {
   if (!product) throw new Error("Product not found");
   return product;
 };
+
+export const createProduct = async (newProduct) => {
+  await new Promise((res) => setTimeout(res, 400));
+  const products = JSON.parse(localStorage.getItem("nexus_products")) || [];
+  const productWithId = { ...newProduct, id: `prod-${Date.now()}` };
+  const updated = [productWithId, ...products];
+  localStorage.setItem("nexus_products", JSON.stringify(updated));
+  return productWithId;
+};
+
+export const deleteProduct = async (id) => {
+  await new Promise((res) => setTimeout(res, 300));
+  const products = JSON.parse(localStorage.getItem("nexus_products")) || [];
+  const updated = products.filter((p) => p.id !== id);
+  localStorage.setItem("nexus_products", JSON.stringify(updated));
+  return id;
+};
