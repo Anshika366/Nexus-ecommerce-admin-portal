@@ -3,15 +3,23 @@ import { createBrowserRouter } from "react-router-dom";
 import PublicLayout from "../components/layout/PublicLayout";
 import AdminLayout from "../components/layout/AdminLayout";
 import ProtectedRoute from "../components/auth/ProtectedRoute";
+
+
 import Home from "../pages/public/Home";
 import Login from "../pages/public/Login";
 import ProductDetail from "../pages/public/ProductDetail";
 import Wishlist from "../pages/public/Wishlist";
 import Categories from "../pages/public/Categories";
 import Shop from "../pages/public/Shop";
+
+
 import Dashboard from "../pages/admin/Dashboard";
 import DashboardStats from "../pages/admin/DashboardStats";
+import ProductManagement from "../pages/admin/ProductManagement";
 import AddProduct from "../pages/admin/AddProduct";
+import OrderManagement from "../pages/admin/OrderManagement";
+import InventoryManagement from "../pages/admin/InventoryManagement";
+
 import NotFound from "../pages/NotFound";
 import { publicProductsLoader, productDetailLoader } from "./productLoader";
 
