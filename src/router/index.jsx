@@ -11,8 +11,10 @@ import Wishlist from "../pages/public/Wishlist";
 import Categories from "../pages/public/Categories";
 import Shop from "../pages/public/Shop";
 
-import Dashboard from "../pages/admin/Dashboard";
-import AddProduct from "../pages/admin/AddProduct";
+// YAHAN CHANGE KIYA HAI (Admin ka 'A' capital kiya hai)
+import Dashboard from "../pages/Admin/Dashboard";
+import AddProduct from "../pages/Admin/AddProduct";
+
 import NotFound from "../pages/NotFound";
 import { publicProductsLoader, productDetailLoader } from "./productLoader";
 
