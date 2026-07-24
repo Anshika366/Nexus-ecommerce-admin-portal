@@ -30,6 +30,9 @@ const ProductDetail = () => {
           src={product.image}
           alt={product.name}
           style={{ width: "100%", borderRadius: "8px" }}
+          onError={(e) => {
+            e.target.src = "https://placehold.co/600x600/FAF9F6/78864A?text=Nexus+Store";
+          }}
         />
         <div>
           <h2>{product.name}</h2>

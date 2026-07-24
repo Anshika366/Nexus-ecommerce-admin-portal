@@ -6,6 +6,9 @@ import ProtectedRoute from "../components/auth/ProtectedRoute";
 import Home from "../pages/public/Home";
 import Login from "../pages/public/Login";
 import ProductDetail from "../pages/public/ProductDetail";
+import Wishlist from "../pages/public/Wishlist";
+import Categories from "../pages/public/Categories";
+import Shop from "../pages/public/Shop";
 import Dashboard from "../pages/admin/Dashboard";
 import AddProduct from "../pages/admin/AddProduct";
 import NotFound from "../pages/NotFound";
@@ -35,6 +38,19 @@ export const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path: "wishlist",
+        element: <Wishlist />,
+      },
+      {
+        path: "categories",
+        element: <Categories />,
+      },
+      {
+        path: "shop",
+        element: <Shop />,
+        loader: publicProductsLoader,
       },
     ],
   },
