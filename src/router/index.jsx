@@ -10,6 +10,7 @@ import Wishlist from "../pages/public/Wishlist";
 import Categories from "../pages/public/Categories";
 import Shop from "../pages/public/Shop";
 import Dashboard from "../pages/admin/Dashboard";
+import DashboardStats from "../pages/admin/DashboardStats";
 import AddProduct from "../pages/admin/AddProduct";
 import NotFound from "../pages/NotFound";
 import { publicProductsLoader, productDetailLoader } from "./productLoader";
