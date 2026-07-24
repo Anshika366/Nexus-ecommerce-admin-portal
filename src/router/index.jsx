@@ -10,8 +10,6 @@ import ProductDetail from "../pages/public/ProductDetail";
 import Wishlist from "../pages/public/Wishlist";
 import Categories from "../pages/public/Categories";
 import Shop from "../pages/public/Shop";
-
-// YAHAN CHANGE KIYA HAI (Admin ka 'A' capital kiya hai)
 import Dashboard from "../pages/Admin/Dashboard";
 import AddProduct from "../pages/Admin/AddProduct";
 
