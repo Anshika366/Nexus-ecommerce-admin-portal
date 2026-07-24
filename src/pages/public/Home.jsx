@@ -139,12 +139,6 @@ const Home = () => {
                 >
                   Shop Now <ArrowRight size={18} />
                 </button>
-                <button
-                  className="home-btn-light"
-                  onClick={() => navigate("/deals")}
-                >
-                  Explore Deals
-                </button>
               </div>
               <div className="home-hero-trust">
                 <div className="home-trust-avatars">
