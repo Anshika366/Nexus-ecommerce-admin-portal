@@ -34,6 +34,7 @@ html, body, #root {
   margin: 0;
   padding: 0;
   width: 100%;
+  overflow-x: hidden;
   background-color: var(--bg-app) !important;
   font-family: var(--font-primary) !important;
   color: var(--text-main);
@@ -351,7 +352,7 @@ p {
 }
 
 .home-hero-title {
-  font-size: 4.5rem; 
+  font-size: clamp(2.2rem, 5vw + 1rem, 4.5rem); 
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.04em;
@@ -696,7 +697,7 @@ p {
 
 .home-category-circles-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 32px;
 }
 
@@ -752,7 +753,7 @@ p {
 
 .home-products-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 36px;
 }
 
@@ -1245,7 +1246,6 @@ p {
     padding: 24px 30px;
   }
   .home-category-circles-grid {
-    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
   .home-testimonials-grid {
@@ -1313,9 +1313,6 @@ p {
   .home-promo-right {
     margin-top: 30px;
   }
-  .home-products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (max-width: 768px) {
@@ -1332,7 +1329,6 @@ p {
     font-size: 2.2rem;
   }
   .home-category-circles-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
   .home-circle-img-box {
@@ -2599,7 +2595,7 @@ p {
 }
 
 .shop-grid {
-  grid-template-columns: repeat(4, 1fr) !important;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
   gap: 24px;
 }
 
@@ -2709,20 +2705,10 @@ p {
   .shop-sidebar {
     position: static;
   }
-  .shop-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .shop-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
 }
 
 @media (max-width: 480px) {
   .shop-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
     gap: 16px;
   }
 }
