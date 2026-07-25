@@ -3508,3 +3508,17 @@ p {
     padding: 24px 16px;
   }
 }
+
+.wishlist-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 280px));
+  gap: 36px;
+}
+
+@media (max-width: 640px) {
+  .wishlist-products-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    justify-content: center;
+  }
+}

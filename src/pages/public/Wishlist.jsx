@@ -41,7 +41,7 @@ const Wishlist = () => {
           </Link>
         </div>
       ) : (
-        <div className="home-products-grid">
+        <div className="wishlist-products-grid">
           {wishlist.map((product) => (
             <div
               key={product.id}
