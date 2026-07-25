@@ -34,7 +34,6 @@ html, body, #root {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden;
   background-color: var(--bg-app) !important;
   font-family: var(--font-primary) !important;
   color: var(--text-main);
@@ -79,9 +78,7 @@ p {
   top: 0;
   width: 100%;
   height: 80px;
-  background: rgba(250, 250, 247, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #FFFFFF;
   border-bottom: 1px solid var(--border-color);
   z-index: 1000;
   transition: var(--transition-smooth);
