@@ -3511,8 +3511,8 @@ p {
 
 .wishlist-products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 280px));
-  gap: 36px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 32px;
 }
 
 @media (max-width: 640px) {
