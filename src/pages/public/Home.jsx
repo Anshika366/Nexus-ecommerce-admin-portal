@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation, useLoaderData } from "react-router-dom";
+import { useNavigate, useLocation, useLoaderData, Link } from "react-router-dom";
 import {
   ArrowRight,
   Truck,
@@ -206,7 +206,12 @@ const Home = () => {
         </div>
         <div className="home-category-circles-grid">
           {categories.map((cat) => (
-            <div key={cat.id} className="home-category-circle-card">
+            <Link
+              key={cat.id}
+              to={`/shop?category=${encodeURIComponent(cat.title)}`}
+              className="home-category-circle-card"
+              style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+            >
               <div
                 className="home-circle-img-box"
                 style={{ backgroundColor: cat.bgColor }}
@@ -214,7 +219,7 @@ const Home = () => {
                 <img src={cat.image} alt={cat.title} />
               </div>
               <span className="home-circle-title">{cat.title}</span>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
