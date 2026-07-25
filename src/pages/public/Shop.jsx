@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useSearchParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Search, ShoppingCart, Heart, Star, SlidersHorizontal, RotateCcw } from "lucide-react";
 import { useCart } from "../../context/CartContext";
@@ -9,14 +9,26 @@ import { fetchProducts } from "../../api/productsApi";
 const Shop = () => {
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState(() => {
+    const cat = searchParams.get("category");
+    return cat ? [cat] : [];
+  });
   const [maxPrice, setMaxPrice] = useState(1000);
   const [sortBy, setSortBy] = useState("popularity");
   const [visibleCount, setVisibleCount] = useState(12);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
+
+  useEffect(() => {
+    const cat = searchParams.get("category");
+    if (cat) {
+      setSelectedCategories([cat]);
+      setVisibleCount(12);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -69,6 +81,7 @@ const Shop = () => {
     setMaxPrice(1000);
     setSortBy("popularity");
     setVisibleCount(12);
+    setSearchParams({});
   };
 
   const filteredProducts = products.filter((product) => {
@@ -178,7 +191,13 @@ const Shop = () => {
         <main className="shop-main-content">
           <div className="shop-toolbar">
             <div className="toolbar-left">
-              <h2>All Products</h2>
+              <h2>
+                {selectedCategories.length === 1
+                  ? selectedCategories[0]
+                  : selectedCategories.length > 1
+                  ? selectedCategories.join(", ")
+                  : "All Products"}
+              </h2>
               {!isLoading && (
                 <span className="toolbar-count">
                   Showing {displayedProducts.length} of {sortedProducts.length} products
